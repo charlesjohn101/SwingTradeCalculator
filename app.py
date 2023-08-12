@@ -2,7 +2,6 @@ import streamlit as st
 
 st.title("Stock Input")
 
-df = pd.read_csv('O:\Algo101\Webpage 2 database\level.csv')
 
 col1, col2, col3, col4 = st.columns(4)
 
