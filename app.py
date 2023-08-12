@@ -1,5 +1,6 @@
 import streamlit as st
 
+
 st.title("Stock Input")
 
 
@@ -49,14 +50,15 @@ profit = sell_lev[sell_level - 1] - average
 
 st.write("")
 
-st.markdown(f'<h6 style="color: black; margin-bottom: 0px;">Total Quantity: {round(av_count, 2)}</h6>', unsafe_allow_html=True)
+st.markdown(f'<h6 style="color: black; margin-bottom: 0px;">Total Amount: {av_sum:,.2f}</h6>', unsafe_allow_html=True)
+st.markdown(f'<h6 style="color: black; margin-bottom: 0px;">Total Quantity: {av_count:,.2f}</h6>', unsafe_allow_html=True)
 
 st.write("")
 
 col1, col2, col3 = st.columns(3)
 with col1:
-    st.markdown(f'<h5 style="color: black; margin-bottom: 0px;">Average price: {rupees_symbol}{round(average, 2)}</h5>', unsafe_allow_html=True)
+    st.markdown(f'<h5 style="color: black; margin-bottom: 0px;">Average price: {rupees_symbol}{average:,.2f}</h5>', unsafe_allow_html=True)
 with col2:
-    st.markdown(f'<h5 style="color: black; margin-bottom: 0px;">Profit per share:{rupees_symbol} {round(profit, 2)}</h5>', unsafe_allow_html=True)
+    st.markdown(f'<h5 style="color: black; margin-bottom: 0px;">Profit per share:{rupees_symbol} {profit:,.2f}</h5>', unsafe_allow_html=True)
 with col3:
-    st.markdown(f'<h5 style="color: black; margin-bottom: 0px;">Total Profit: {rupees_symbol}{round(profit * av_count)}</h5>', unsafe_allow_html=True)
+    st.markdown(f'<h5 style="color: black; margin-bottom: 0px;">Total Profit: {rupees_symbol}{(profit * av_count):,.2f}</h5>', unsafe_allow_html=True)
